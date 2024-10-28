@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: resource-limited-pod
+spec:
+  containers:
+    - name: web-server
+      image: nginx
+      ports:
+        - containerPort: 80
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "0.5"  # 50% of a CPU core
+        requests:
+          memory: "64Mi"
+          cpu: "0.3"  # 30% of a CPU core
+      volumeMounts:
+        - name: shared-storage
+          mountPath: /shared-data
+    - name: utility
+      image: alpine
+      args: ["sleep", "3600"]
+      resources:
+        limits:
+          memory: "64Mi"
+          cpu: "0.2"
+        requests:
+          memory: "32Mi"
+          cpu: "0.1"
+      volumeMounts:
+        - name: shared-storage
+          mountPath: /shared-data
+  volumes:
+    - name: shared-storage
+      emptyDir:
+        sizeLimit: "256Mi"
