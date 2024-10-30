@@ -1,4 +1,3 @@
-```markdown
 # Kubernetes: Day 3 - Understanding and Managing Deployments
 
 Today’s content will focus on the **Deployment** object in Kubernetes. We’ll cover essential concepts such as creating, updating, and managing Deployments, including update strategies, rollbacks, and more.
