@@ -1,0 +1,18 @@
+apiVersion: v1 # versão da API do Kubernetes
+kind: Pod # tipo de objeto que estamos criando
+metadata: # metadados do Pod
+  name: giropops # nome do Pod
+spec: # especificação do Pod
+  containers: # lista de containers
+  - name: girus # nome do container 
+    image: ubuntu # imagem do container
+    args: # argumentos que serão passados para o container
+    - sleep # usando o comando sleep para manter o container em execução
+    - infinity # o argumento infinity faz o container esperar para sempre
+    volumeMounts: # lista de volumes que serão montados no container
+    - name: primeiro-emptydir # nome do volume
+      mountPath: /giropops # diretório onde o volume será montado 
+  volumes: # lista de volumes
+  - name: primeiro-emptydir # nome do volume
+    emptyDir: # tipo do volume
+      sizeLimit: 256Mi # tamanho máximo do volume
