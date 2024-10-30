@@ -1,8 +1,3 @@
-Vou preparar uma documentação em inglês estruturada para esse conteúdo. Será útil tanto para o aprendizado individual quanto para o compartilhamento no GitHub com uma estrutura completa para iniciantes em Kubernetes entenderem os volumes. Vamos dividir em seções no arquivo `README.md`.
-
-### Estrutura do `README.md`
-
-```markdown
 # Kubernetes Volumes Explained: ConfigMaps, Persistent Volumes (PV), and Persistent Volume Claims (PVC)
 
 Welcome to the guide on understanding and configuring Kubernetes volumes! Today, we’ll demystify Kubernetes volumes with hands-on examples using various clusters, including **EKS**, **kind**, and cloud provider instances.
